@@ -1,0 +1,44 @@
+# Project functions
+#
+# Endpoint: /project
+# TableName: project-{stage}
+project-create:
+  handler: handlers/shared/add.add
+  environment:
+    SELECTED_DB: ${self:provider.environment.PROJECT_TABLE}
+  events:
+    - http:
+        path: project
+        method: post
+        cors: true
+
+project-list:
+  handler: handlers/shared/list.list
+  environment:
+    SELECTED_DB: ${self:provider.environment.PROJECT_TABLE}
+    environment:
+  events:
+    - http:
+        path: project
+        method: get
+        cors: true
+
+project-get:
+  handler: handlers/shared/get.get
+  environment:
+    SELECTED_DB: ${self:provider.environment.PROJECT_TABLE}
+  events:
+    - http:
+        path: project/{id}
+        method: get
+        cors: true
+
+project-delete:
+  handler: handlers/shared/delete.delete
+  environment:
+    SELECTED_DB: ${self:provider.environment.PROJECT_TABLE}
+  events:
+    - http:
+        path: project/{id}
+        method: delete
+        cors: true

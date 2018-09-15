@@ -1,0 +1,44 @@
+# Team functions
+#
+# Endpoint: /team
+# TableName: team-{stage}
+team-create:
+  handler: handlers/shared/add.add
+  environment:
+    SELECTED_DB: ${self:provider.environment.TEAM_TABLE}
+  events:
+    - http:
+        path: team
+        method: post
+        cors: true
+
+team-list:
+  handler: handlers/shared/list.list
+  environment:
+    SELECTED_DB: ${self:provider.environment.TEAM_TABLE}
+    environment:
+  events:
+    - http:
+        path: team
+        method: get
+        cors: true
+
+team-get:
+  handler: handlers/shared/get.get
+  environment:
+    SELECTED_DB: ${self:provider.environment.TEAM_TABLE}
+  events:
+    - http:
+        path: team/{id}
+        method: get
+        cors: true
+
+team-delete:
+  handler: handlers/shared/delete.delete
+  environment:
+    SELECTED_DB: ${self:provider.environment.TEAM_TABLE}
+  events:
+    - http:
+        path: team/{id}
+        method: delete
+        cors: true

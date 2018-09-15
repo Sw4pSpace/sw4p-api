@@ -1,0 +1,22 @@
+{
+  "name": "serverless-dynamodb-rest-poc",
+  "version": "1.0.0",
+  "description": "Serverless REST API with DynamoDB and offline support",
+  "repository": "https://github.com/Sw4pSpace/serverless-dynamodb-rest-poc",
+  "author": "Sw4pSpace",
+  "license": "GPLv3",
+  "dependencies": {
+    "aws-sdk": "^2.12.0",
+    "uuid": "^2.0.3"
+  },
+  "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.33",
+    "serverless-offline": "^3.25.11"
+  },
+  "scripts": {
+    "dev-install": "npm install && serverless dynamodb install",
+    "dev-start": "serverless offline start --migrate",
+    "auto-start": "npm run dev-install && npm run dev-start",
+    "deploy": "serverless deploy --stage prod"
+  }
+}

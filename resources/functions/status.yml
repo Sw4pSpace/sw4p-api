@@ -1,0 +1,10 @@
+# Status function
+#
+# Endpoint: /status
+status:
+  handler: handlers/status/status.status
+  events:
+    - http:
+        path: status
+        method: get
+        cors: true

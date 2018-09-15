@@ -1,0 +1,15 @@
+# This file holds all of the IAM Role Statement Resources for serverless.yml
+#
+# This is abstracted because as you make more endpoints it is possible that you will have many
+# tables. So this provides a nice place to define them.
+- Effect: Allow
+  Action:
+    - dynamodb:Query
+    - dynamodb:Scan
+    - dynamodb:GetItem
+    - dynamodb:PutItem
+    - dynamodb:UpdateItem
+    - dynamodb:DeleteItem
+  Resource:
+    - Fn::GetAtt: [ TeamDynamoDbTable, Arn ]
+    - Fn::GetAtt: [ ProjectDynamoDbTable, Arn ]

@@ -1,0 +1,4 @@
+# This file holds the functions for the serverless.yml (See /functions for individual functions)
+- ${file(resources/functions/team.yml)}
+- ${file(resources/functions/project.yml)}
+- ${file(resources/functions/status.yml)}
