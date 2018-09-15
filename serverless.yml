@@ -39,6 +39,7 @@ provider:
   environment:
     TEAM_TABLE: "team-${opt:stage, self:provider.stage}"
     PROJECT_TABLE: "project-${opt:stage, self:provider.stage}"
+    TOOL_TABLE: "tool-${opt:stage, self:provider.stage}"
   iamRoleStatements: ${file(resources/iam-role-stmt-resources.yml)}
 
 # Serverless functions

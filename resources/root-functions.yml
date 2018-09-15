@@ -2,3 +2,4 @@
 - ${file(resources/functions/team.yml)}
 - ${file(resources/functions/project.yml)}
 - ${file(resources/functions/status.yml)}
+- ${file(resources/functions/tool.yml)}

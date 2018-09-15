@@ -1,0 +1,44 @@
+# Tool functions
+#
+# Endpoint: /tool
+# TableName: tool-{stage}
+tool-create:
+  handler: handlers/shared/add.add
+  environment:
+    SELECTED_DB: ${self:provider.environment.TOOL_TABLE}
+  events:
+    - http:
+        path: tool
+        method: post
+        cors: true
+
+tool-list:
+  handler: handlers/shared/list.list
+  environment:
+    SELECTED_DB: ${self:provider.environment.TOOL_TABLE}
+    environment:
+  events:
+    - http:
+        path: tool
+        method: get
+        cors: true
+
+tool-get:
+  handler: handlers/shared/get.get
+  environment:
+    SELECTED_DB: ${self:provider.environment.TOOL_TABLE}
+  events:
+    - http:
+        path: tool/{id}
+        method: get
+        cors: true
+
+tool-delete:
+  handler: handlers/shared/delete.delete
+  environment:
+    SELECTED_DB: ${self:provider.environment.TOOL_TABLE}
+  events:
+    - http:
+        path: tool/{id}
+        method: delete
+        cors: true

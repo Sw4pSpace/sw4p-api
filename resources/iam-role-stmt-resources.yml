@@ -13,3 +13,4 @@
   Resource:
     - Fn::GetAtt: [ TeamDynamoDbTable, Arn ]
     - Fn::GetAtt: [ ProjectDynamoDbTable, Arn ]
+    - Fn::GetAtt: [ ToolDynamoDbTable, Arn ]
