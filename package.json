@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "serverless-dynamodb-local": "^0.2.33",
-    "serverless-offline": "^3.25.11"
+    "serverless-offline": "^14.8.3"
   },
   "scripts": {
     "dev-install": "npm install && serverless dynamodb install",
